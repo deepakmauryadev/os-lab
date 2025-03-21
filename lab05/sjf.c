@@ -43,7 +43,7 @@ int main() {
   scanf("%d", &n);
   
   Process processes[n];
-  printf("Enter PID, Arrival Time, and Burst Time for each process:\n");
+  printf("Enter PID, AT, BT\n");
   for (int i = 0; i < n; i++) {
     scanf("%d %d %d", &processes[i].pid, &processes[i].at, &processes[i].bt);
   }
