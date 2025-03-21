@@ -1,12 +1,7 @@
 #include "stdio.h"
 
 typedef struct {
-  int pid;
-  int at;
-  int bt;
-  int ct;
-  int tat;
-  int wt;
+  int pid, at, bt, ct, tat, wt;
 } Process;
 
 void fcfs(Process processes[], int n) {
@@ -15,9 +10,7 @@ void fcfs(Process processes[], int n) {
   for (int i=0; i<n; i++) {
     Process *p = &processes[i];
 
-    if (p->at > current_time) {
-      current_time = p->at;
-    }
+    if (p->at > current_time) current_time = p->at;
 
     p->ct = current_time + p->bt;
     p->tat = p->ct - p->at;
@@ -34,7 +27,7 @@ int main() {
 
   Process processes[n];
 
-  printf("Enter process details (PID, Arrival Time, Burst Time)\n");
+  printf("Enter process details (PID, AT, BT)\n");
   for (int i=0; i<n; i++) {
     Process *p = &processes[i];
 
