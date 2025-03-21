@@ -37,14 +37,6 @@ void sjf(Process processes[], int n) {
   }
 }
 
-void print_processes(Process processes[], int n) {
-  printf("PID\tAT\tBT\tCT\tTAT\tWT\n");
-  for (int i = 0; i < n; i++) {
-    Process *p = &processes[i];
-    printf("%d\t%d\t%d\t%d\t%d\t%d\n", p->pid, p->at, p->bt, p->ct, p->tat, p->wt);
-  }
-}
-
 int main() {
   int n;
   printf("Enter the number of processes: ");
@@ -57,7 +49,12 @@ int main() {
   }
   
   sjf(processes, n);
-  print_processes(processes, n);
+
+  printf("PID\tAT\tBT\tCT\tTAT\tWT\n");
+  for (int i = 0; i < n; i++) {
+    Process *p = &processes[i];
+    printf("%d\t%d\t%d\t%d\t%d\t%d\n", p->pid, p->at, p->bt, p->ct, p->tat, p->wt);
+  }
   
   return 0;
 }
